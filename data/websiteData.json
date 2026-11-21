@@ -1,0 +1,461 @@
+{
+  "common": {
+    "logo": "/logo.png",
+    "siteNamePrimary": "Job",
+    "siteNameAccent": "Nexa",
+    "tagline": "HR Recruitment & Talent Solutions",
+    "phone": "+1 000 000 000",
+    "email": "info@xyz.com",
+    "address": "123 Business Ave, New York, NY 10001, USA",
+    "socialLinks": [
+      { "id": "facebook", "label": "Facebook", "mark": "f", "href": "#home" },
+      { "id": "instagram", "label": "Instagram", "mark": "ig", "href": "#home" },
+      { "id": "linkedin", "label": "LinkedIn", "mark": "in", "href": "#home" },
+      { "id": "youtube", "label": "YouTube", "mark": "yt", "href": "#home" },
+      { "id": "x", "label": "X", "mark": "x", "href": "#home" }
+    ]
+  },
+  "categories": {
+    "RecruitmentHR": {
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Header": "JobHeader1",
+            "Footer": "JobFooter1"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                { "key": "Banner", "component": "JobBanner1" },
+                { "key": "About", "component": "JobAbout1" },
+                { "key": "Partners", "component": "JobPartners1" },
+                { "key": "Services", "component": "JobServices1" },
+                { "key": "WhyChooseUs", "component": "JobWhyChoose1" },
+                { "key": "Jobs", "component": "JobOpenings1" },
+                { "key": "Testimonials", "component": "JobTestimonials1" },
+                { "key": "Contact", "component": "JobContact1" }
+              ]
+            }
+          }
+        }
+      },
+      "sections": {
+        "Header": {
+          "variants": {
+            "JobHeader1": {
+              "logo": "/logo.png",
+              "homeHref": "#home",
+              "homeAriaLabel": "JobNexa home",
+              "menuAriaLabel": "Toggle Menu",
+              "navLinks": [
+                { "label": "Home", "href": "#home", "id": "home" },
+                { "label": "About", "href": "#about", "id": "about" },
+                { "label": "Service", "href": "#services", "id": "services" },
+                { "label": "Why Choose", "href": "#why-choose", "id": "why-choose" },
+                { "label": "Testimonial", "href": "#testimonials", "id": "testimonials" }
+              ],
+              "ctaButton": {
+                "label": "Contact Us",
+                "href": "#callback"
+              }
+            }
+          }
+        },
+        "Banner": {
+          "variants": {
+            "JobBanner1": {
+              "sectionId": "home",
+              "headlineLine1": "Find Your Next",
+              "headlineHighlight": "Career",
+              "headlineEnd": "Here",
+              "subheadline": "Explore exciting career opportunities and roles that match your skills, interests, and career goals.",
+              "roles": [
+                {
+                  "id": "hr-manager",
+                  "label": "HR Manager",
+                  "image": "/h1.webp",
+                  "avatarBg": "#FBBF24",
+                  "badgeBg": "#FDE9B0",
+                  "pos": "lg:left-[12.5%] lg:top-[3%]",
+                  "float": -8,
+                  "delay": 0.1,
+                  "from": "left"
+                },
+                {
+                  "id": "assistant",
+                  "label": "Assistant",
+                  "image": "/h3.webp",
+                  "avatarBg": "#BFE9CF",
+                  "badgeBg": "#C8F5DC",
+                  "pos": "lg:left-[14.5%] lg:top-[56%]",
+                  "float": 8,
+                  "delay": 0.25,
+                  "from": "left"
+                },
+                {
+                  "id": "finance",
+                  "label": "Finance",
+                  "image": "/h2.webp",
+                  "avatarBg": "#D4D2FA",
+                  "badgeBg": "#DAD6FB",
+                  "pos": "lg:right-[12.5%] lg:top-[3%]",
+                  "float": 8,
+                  "delay": 0.2,
+                  "from": "right"
+                },
+                {
+                  "id": "it-executive",
+                  "label": "IT Executive",
+                  "image": "/h4.webp",
+                  "avatarBg": "#FBCFDC",
+                  "badgeBg": "#FBD3DD",
+                  "pos": "lg:right-[14.5%] lg:top-[56%]",
+                  "float": -8,
+                  "delay": 0.35,
+                  "from": "right"
+                }
+              ],
+              "bursts": [
+                {
+                  "id": "burst-orange",
+                  "color": "#FF6B00",
+                  "className": "left-[10%] top-[0%]",
+                  "rotate": -20
+                },
+                {
+                  "id": "burst-teal",
+                  "color": "#2DD4BF",
+                  "className": "left-[10%] top-[70%]",
+                  "rotate": 0
+                },
+                {
+                  "id": "burst-rose",
+                  "color": "#F43F5E",
+                  "className": "right-[8%] top-[60%]",
+                  "rotate": 160
+                }
+              ]
+            }
+          }
+        },
+        "About": {
+          "variants": {
+            "JobAbout1": {
+              "sectionId": "about",
+              "topWord": "ABOUT",
+              "accentWord": "US",
+              "summary": "A trusted HR recruitment partner connecting talent with the right opportunities.",
+              "teamImage": "/a1.webp",
+              "teamImageAlt": "JobNexa recruitment team in discussion",
+              "officeImage": "/a3.webp",
+              "officeImageAlt": "JobNexa modern office",
+              "missionTitle": "Our Mission",
+              "missionText": "To deliver tailored hiring solutions that empower businesses and create meaningful career opportunities for professionals.",
+              "stats": [
+                { "value": 50, "suffix": "+", "label": "Job Openings" },
+                { "value": 50, "suffix": "+", "label": "Verified Companies" },
+                { "value": 70, "suffix": "%", "label": "Successful Candidates" },
+                { "value": 3, "suffix": "K+", "label": "Monthly Visitors" }
+              ]
+            }
+          }
+        },
+        "Partners": {
+          "variants": {
+            "JobPartners1": {
+              "sectionId": "partners",
+              "eyebrow": "OUR HIRING PARTNERS",
+              "headingStart": "Trusted by Leading",
+              "headingHighlight": "Companies",
+              "subtitle": "We partner with top organizations across industries to connect great talent with the right opportunities.",
+              "items": [
+                {
+                  "name": "Amazon",
+                  "kind": "amazon",
+                  "text": "amazon"
+                },
+                {
+                  "name": "Microsoft",
+                  "kind": "microsoft",
+                  "text": "Microsoft"
+                },
+                {
+                  "name": "Google",
+                  "kind": "google",
+                  "text": "Google"
+                },
+                {
+                  "name": "Deloitte",
+                  "kind": "deloitte",
+                  "text": "Deloitte",
+                  "accentText": "."
+                },
+                {
+                  "name": "Infosys",
+                  "kind": "infosys",
+                  "text": "Infosys",
+                  "reg": "®"
+                },
+                {
+                  "name": "TCS",
+                  "kind": "tcs",
+                  "text": "tcs"
+                },
+                {
+                  "name": "Accenture",
+                  "kind": "accenture",
+                  "text": "accenture",
+                  "reg": "®"
+                },
+                {
+                  "name": "HCLTech",
+                  "kind": "hcltech",
+                  "text": "HCLTech",
+                  "reg": "®"
+                }
+              ]
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "JobServices1": {
+              "sectionId": "services",
+              "badge": "OUR SERVICES",
+              "titleLine1": "Services Designed",
+              "titleLine2Prefix": "To",
+              "titleHighlight": "Your Needs.",
+              "description": "Our commitment to client satisfaction, deep regard for personal relationships and dedication to quality is the cornerstone to our continued success.",
+              "ariaLabelSuffix": "– learn more",
+              "cards": [
+                {
+                  "slug": "improving-resource",
+                  "titleLines": ["Improving", "Resource"],
+                  "icon": "resource",
+                  "image": "a4.webp",
+                  "href": "#callback"
+                },
+                {
+                  "slug": "recruitment-solutions",
+                  "titleLines": ["Recruitment", "Solutions"],
+                  "icon": "recruitment",
+                  "image": "/a1.webp",
+                  "href": "#callback"
+                },
+                {
+                  "slug": "leadership-training",
+                  "titleLines": ["Leadership", "Training"],
+                  "icon": "leadership",
+                  "image": "/a3.webp",
+                  "href": "#callback"
+                }
+              ]
+            }
+          }
+        },
+        "WhyChooseUs": {
+          "variants": {
+            "JobWhyChoose1": {
+              "sectionId": "why-choose",
+              "badge": "WHY CHOOSE US",
+              "titleLine1": "Your Trusted Partner",
+              "titleLine2Prefix": "for",
+              "titleHighlight": "Recruitment Success",
+              "subtitle": "We go beyond hiring by delivering reliable, efficient, and people-focused recruitment solutions tailored to your business needs.",
+              "bgImage": "/a3.webp",
+              "pillars": [
+                {
+                  "id": "talent",
+                  "titleLines": ["Access to", "Top Talent"],
+                  "icon": "people"
+                },
+                {
+                  "id": "hiring",
+                  "titleLines": ["Faster", "Hiring"],
+                  "icon": "target"
+                },
+                {
+                  "id": "expertise",
+                  "titleLines": ["Industry", "Expertise"],
+                  "icon": "badge"
+                },
+                {
+                  "id": "partnership",
+                  "titleLines": ["Long-Term", "Partnership"],
+                  "icon": "handshake"
+                }
+              ]
+            }
+          }
+        },
+        "Jobs": {
+          "variants": {
+            "JobOpenings1": {
+              "sectionId": "jobs",
+              "eyebrow": "LATEST JOB OPENINGS",
+              "headingStart": "Explore & Apply for Exciting",
+              "headingHighlight": "Opportunities",
+              "subtitle": "Discover roles that match your skills and take the next step in your career.",
+              "applyButtonLabel": "Apply Now",
+              "selectedPrefix": "Selected role:",
+              "selectedSuffix": "— scroll down to Request a Call Back.",
+              "viewMoreButton": {
+                "label": "View More",
+                "href": "#callback"
+              },
+              "items": [
+                {
+                  "id": "frontend-dev",
+                  "title": "Frontend Developer",
+                  "type": "Full Time",
+                  "location": "Noida, India",
+                  "experience": "3–5 Years",
+                  "description": "Build responsive and user-friendly web applications using modern technologies."
+                },
+                {
+                  "id": "digital-marketing",
+                  "title": "Digital Marketing Executive",
+                  "type": "Full Time",
+                  "location": "Delhi, India",
+                  "experience": "2–4 Years",
+                  "description": "Plan and execute digital campaigns to drive brand visibility and lead generation."
+                },
+                {
+                  "id": "hr-recruiter",
+                  "title": "HR Recruiter",
+                  "type": "Full Time",
+                  "location": "Noida, India",
+                  "experience": "1–3 Years",
+                  "description": "Source, screen, and hire top talent while ensuring a smooth recruitment process."
+                },
+                {
+                  "id": "bde",
+                  "title": "Business Development Executive",
+                  "type": "Full Time",
+                  "location": "Gurgaon, India",
+                  "experience": "3–5 Years",
+                  "description": "Identify new business opportunities and build strong client relationships."
+                }
+              ]
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "JobTestimonials1": {
+              "sectionId": "testimonials",
+              "badge": "TESTIMONIALS",
+              "titleLine1": "Trusted by Over",
+              "countValue": 15,
+              "countSuffix": "k+",
+              "titleLine2End": "Satisfied",
+              "titleLine3": "Candidates",
+              "portraitImage": "/h4.webp",
+              "portraitAlt": "Satisfied candidate",
+              "imageFallbackPrefix": "Place image at",
+              "starCount": 5,
+              "prevAriaLabel": "Previous testimonial",
+              "nextAriaLabel": "Next testimonial",
+              "items": [
+                {
+                  "id": "neha",
+                  "quote": "The hiring process was smooth and hassle-free. I got a great role that perfectly matches my skills and goals.",
+                  "name": "Neha Agarwal",
+                  "role": "Business Analyst",
+                  "avatar": "/h3.webp"
+                },
+                {
+                  "id": "rahul",
+                  "quote": "A highly professional and supportive team. They guided me at every step and kept me updated throughout.",
+                  "name": "Rahul Verma",
+                  "role": "Software Engineer",
+                  "avatar": "/h1.webp"
+                },
+                {
+                  "id": "pooja",
+                  "quote": "Excellent experience! The team understood my profile well and connected me with the right opportunity quickly.",
+                  "name": "Pooja Sharma",
+                  "role": "Marketing Executive",
+                  "avatar": "/h4.webp"
+                }
+              ]
+            }
+          }
+        },
+        "Contact": {
+          "variants": {
+            "JobContact1": {
+              "sectionId": "callback",
+              "badge": "GET A QUOTE",
+              "titleLine1": "Let’s Build Your",
+              "titleLine2": "Expert Team!",
+              "bannerImage": "/a1.webp",
+              "bannerImageAlt": "Build your expert team",
+              "imageFallbackText": "Place image at /public/images/callback-team.jpg",
+              "bullets": [
+                "Build a stable team with a 96.7% retention rate.",
+                "Boost project agility and scalability with quality talent.",
+                "Start risk-free, forget lock-ins, exit fees, or volume commitments."
+              ],
+              "helperText": "Share your details in the form, tell us about your needs, and we’ll get back with the next steps.",
+              "details": [
+                {
+                  "icon": "send",
+                  "label": "General Enquiries",
+                  "value": "info@xyz.com",
+                  "href": "mailto:info@xyz.com"
+                },
+                {
+                  "icon": "headset",
+                  "label": "Customer Support",
+                  "value": "+1 000 000 000",
+                  "href": "tel:+1000000000"
+                }
+              ],
+              "form": {
+                "title": "Request a Call Back",
+                "fields": {
+                  "name": "Full Name",
+                  "email": "Email Address",
+                  "phone": "Phone Number",
+                  "interestDefault": "Interested In",
+                  "message": "Your Message"
+                },
+                "interests": [
+                  { "value": "hiring", "label": "Permanent Hiring" },
+                  { "value": "staffing", "label": "Contract Staffing" },
+                  { "value": "leadership", "label": "Leadership Training" }
+                ],
+                "submitLabel": "Send Request",
+                "sendingLabel": "Sending…",
+                "successMessage": "Request sent successfully! We will contact you shortly."
+              }
+            }
+          }
+        },
+        "Footer": {
+          "variants": {
+            "JobFooter1": {
+              "logo": "/logo1.png",
+              "contactHeading": "Contact Info",
+              "quickLinksHeading": "Quick Links",
+              "followUsHeading": "Follow Us",
+              "addressLabel": "Address",
+              "emailLabel": "Email",
+              "phoneLabel": "Phone",
+              "quickLinks": [
+                { "label": "Home", "href": "#home" },
+                { "label": "About Us", "href": "#about" },
+                { "label": "Our Services", "href": "#services" },
+                { "label": "Why Choose Us", "href": "#why-choose" },
+                { "label": "Testimonials", "href": "#testimonials" },
+                { "label": "Contact Us", "href": "#callback" }
+              ],
+              "copyright": "© 2026 JobNexa. All Rights Reserved. Powered By Lestow."
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,69 +1,159 @@
-import Image from "next/image";
+import websiteData from "../data/websiteData.json";
+import Navbar, { type NavbarSectionProps } from "../components/Navbar";
+import HeroSection, { type HeroSectionProps } from "../components/HeroSection";
+import AboutSection, { type AboutSectionProps } from "../components/AboutSection";
+import HiringPartners, {
+  type HiringPartnersSectionProps,
+} from "../components/HiringPartners";
+import ServicesSection, {
+  type ServicesSectionProps,
+} from "../components/ServicesSection";
+import WhyChooseUs, {
+  type WhyChooseUsSectionProps,
+} from "../components/WhyChooseUs";
+import JobOpeningsSection, {
+  type JobOpeningsSectionProps,
+} from "../components/JobOpeningsSection";
+import TestimonialsSection, {
+  type TestimonialsSectionProps,
+} from "../components/TestimonialsSection";
+import CallBackSection, {
+  type CallBackSectionProps,
+} from "../components/CallBackSection";
+import Footer, { type FooterSectionProps } from "../components/Footer";
 
-export default function Home() {
+function getVariant(
+  variants: Record<string, unknown> | undefined,
+  key: string
+): Record<string, unknown> {
+  const raw = variants?.[key];
+  return raw && typeof raw === "object"
+    ? (raw as Record<string, unknown>)
+    : {};
+}
+
+export default function HomePage() {
+  const { common, categories } = websiteData;
+  const recruitment = categories.RecruitmentHR;
+  const template = recruitment.templateComponents["template-1"];
+  const sections = recruitment.sections as Record<
+    string,
+    { variants?: Record<string, unknown> }
+  >;
+
+  const headerData = getVariant(
+    sections.Header?.variants,
+    template.shared.Header
+  ) as unknown as NavbarSectionProps;
+
+  const footerData = getVariant(
+    sections.Footer?.variants,
+    template.shared.Footer
+  ) as unknown as FooterSectionProps;
+
+  const renderSection = (key: string, componentName: string) => {
+    const rawData = getVariant(sections[key]?.variants, componentName);
+
+    switch (key) {
+      case "Banner":
+        return (
+          <HeroSection
+            key={key}
+            {...(rawData as unknown as HeroSectionProps)}
+          />
+        );
+      case "About":
+        return (
+          <AboutSection
+            key={key}
+            {...(rawData as unknown as AboutSectionProps)}
+          />
+        );
+      case "Partners":
+        return (
+          <HiringPartners
+            key={key}
+            {...(rawData as unknown as HiringPartnersSectionProps)}
+          />
+        );
+      case "Services":
+        return (
+          <ServicesSection
+            key={key}
+            {...(rawData as unknown as ServicesSectionProps)}
+          />
+        );
+      case "WhyChooseUs":
+        return (
+          <WhyChooseUs
+            key={key}
+            {...(rawData as unknown as WhyChooseUsSectionProps)}
+          />
+        );
+      case "Jobs":
+        return (
+          <JobOpeningsSection
+            key={key}
+            {...(rawData as unknown as JobOpeningsSectionProps)}
+          />
+        );
+      case "Testimonials":
+        return (
+          <TestimonialsSection
+            key={key}
+            {...(rawData as unknown as TestimonialsSectionProps)}
+          />
+        );
+      case "Contact":
+        return (
+          <CallBackSection
+            key={key}
+            {...(rawData as unknown as CallBackSectionProps)}
+          />
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="min-h-screen bg-white text-[#071947]">
+      <Navbar
+        logo="/logo.png"
+        siteNamePrimary={common.siteNamePrimary}
+        siteNameAccent={common.siteNameAccent}
+        tagline={common.tagline}
+        homeHref={headerData.homeHref}
+        homeAriaLabel={headerData.homeAriaLabel}
+        menuAriaLabel={headerData.menuAriaLabel}
+        navLinks={headerData.navLinks}
+        ctaButton={headerData.ctaButton}
+      />
+
+      <main>
+        {template.pages.home.components.map((item) =>
+          renderSection(item.key, item.component)
+        )}
       </main>
+
+      <Footer
+        logo="/logo1.png"
+        contactHeading={footerData.contactHeading}
+        quickLinksHeading={footerData.quickLinksHeading}
+        followUsHeading={footerData.followUsHeading}
+        addressLabel={footerData.addressLabel}
+        address={common.address}
+        emailLabel={footerData.emailLabel}
+        email={common.email}
+        phoneLabel={footerData.phoneLabel}
+        phone={common.phone}
+        quickLinks={footerData.quickLinks}
+        socialLinks={common.socialLinks as FooterSectionProps["socialLinks"]}
+        siteNamePrimary={common.siteNamePrimary}
+        siteNameAccent={common.siteNameAccent}
+        tagline={common.tagline}
+        copyright={footerData.copyright}
+      />
     </div>
   );
 }
